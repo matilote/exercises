@@ -29,3 +29,13 @@ const ages = (people) => {
     })
     return sum
 }
+
+const ages2 = (people) => {
+    let arr = []
+    arr = people.filter(e => {
+        return e.age > 0
+    })
+    return arr.reduce((a, b) => {
+        return a.age + b.age
+    })
+}
