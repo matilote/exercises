@@ -64,4 +64,10 @@ const agesExtended = people => {
     return sum
 }
 
-console.log(agesExtended(people2))
+const sumAges = people => {
+    return Object.values(people).filter(e => { 
+        return e.age > 0
+    }).reduce((a, b) => {
+        return a.age + b.age
+    })
+}
