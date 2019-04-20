@@ -20,6 +20,12 @@ const people = [
     {name: 'Eve', age: -1}
 ];
 
+const people2 = {
+    192934: { name: 'Alice', age: 18 },
+    281828: { name: 'Bob', age: 99 },
+    292191: { name: 'Eve', age: -1 }
+}
+
 const ages = (people) => {
     let sum = 0;
     people.forEach(e => {
@@ -39,3 +45,23 @@ const ages2 = (people) => {
         return a.age + b.age
     })
 }
+
+const ages3 = people => {
+    let sum = 0;
+    for (let i = 0; i < people.length; i++) {
+        people[i].age > 0 ? sum += people[i].age : 0
+    }
+    return sum
+}
+
+const agesExtended = people => {
+    let sum = 0;
+    for (let i in people) {
+        if(people[i].age > 0) {
+            sum += people[i].age
+        }
+    }
+    return sum
+}
+
+console.log(agesExtended(people2))
