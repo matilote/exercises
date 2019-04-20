@@ -54,7 +54,7 @@ const ages3 = people => {
     return sum
 }
 
-const agesExtended = people => {
+const ages4 = people => {
     let sum = 0;
     for (let i in people) {
         if(people[i].age > 0) {
@@ -64,10 +64,19 @@ const agesExtended = people => {
     return sum
 }
 
-const sumAges = people => {
+const ages5 = people => {
     return Object.values(people).filter(e => { 
         return e.age > 0
     }).reduce((a, b) => {
         return a.age + b.age
     })
+}
+
+const ages6 = people => {
+    let arr = Object.entries(people)
+    let sum = 0
+    arr.forEach(e => {
+        e[1].age > 0 ? sum += e[1].age : undefined
+    })
+    return sum
 }
