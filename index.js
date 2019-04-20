@@ -37,7 +37,7 @@ const ages = (people) => {
 }
 
 const ages2 = (people) => {
-    let arr = []
+    const arr = []
     arr = people.filter(e => {
         return e.age > 0
     })
@@ -73,10 +73,27 @@ const ages5 = people => {
 }
 
 const ages6 = people => {
-    let arr = Object.entries(people)
+    const arr = Object.entries(people)
     let sum = 0
     arr.forEach(e => {
         e[1].age > 0 ? sum += e[1].age : undefined
     })
     return sum
 }
+
+const ages7 = people => {
+    const obj = Object.assign({}, people)
+    const arr = Object.values(obj)
+    const sum = arr.map(e => {
+        if(e.age > 0) {
+            return e.age
+        } else {
+            return e.age = 0
+        }
+    }).reduce((a, b) => {
+        return a + b
+    })
+    return sum
+}
+
+console.log(ages7(people2))
